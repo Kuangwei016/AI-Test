@@ -1,0 +1,9 @@
+---
+- name: Ubuntu Jacktime Upgrade 25.3.x
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: Ubuntu_jacktime_upgrade_25.3.x
+      when: ansible_distribution == "Ubuntu"

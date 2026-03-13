@@ -1,0 +1,9 @@
+---
+- name: Copy betcore packages to remote machine
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ betcore_home }}"
+    remote_src: false
+    owner: "{{ betcore_user }}"
+    group: "{{ betcore_user }}"
+  loop: "{{ betcore_pakcages }}"

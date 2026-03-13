@@ -1,0 +1,6 @@
+---
+- name: Install betcore packages
+  ansible.builtin.apt:
+    deb: "{{ betcore_home }}/{{ item }}"
+    state: present
+  loop: "{{ betcore_pakcages }}"
